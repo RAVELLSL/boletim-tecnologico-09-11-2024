@@ -1,0 +1,689 @@
+
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boletim Tecnológico</title>
+    <style>
+       body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f7f7f7;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background: linear-gradient(135deg, #333, #000);
+    color: white;
+    padding: 30px 0;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    font-size: 36px;
+    margin: 0;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.container {
+    width: 90%;
+    margin: auto;
+    padding: 20px 0;
+}
+
+.edition-info {
+    text-align: center;
+    font-size: 16px;
+    color: #666;
+    margin: 15px 0;
+}
+
+.section-title {
+    color: #333;
+    font-size: 28px;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #333;
+    padding-bottom: 5px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+/* Configuração das seções para centralizar os cards */
+.main-section, .innovation-section, .deu-ruim-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Centraliza os cards horizontalmente */
+    gap: 20px;
+    margin: 30px 0;
+}
+
+.card {
+    background-color: #fff;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 300px; /* Define uma largura fixa para os cards */
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+}
+
+.card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.card h2 {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 30px;
+}
+
+footer p {
+    margin: 0;
+    font-size: 14px;
+}
+
+/* Estilos para os modais */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 100;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 5% auto;
+    padding: 20px;
+    border-radius: 12px;
+    width: 60%;
+    height: 80%;
+    overflow-y: auto;
+    position: relative;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5);
+}
+
+.modal-content h2 {
+    text-align: center;
+    color: #333;
+}
+
+.modal-content img {
+    width: 80%;
+    height: auto;
+    margin: 20px auto;
+    display: block;
+    border-radius: 10px;
+}
+
+.modal-content p {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #555;
+    text-align: justify;
+    margin-top: 20px;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    color: #333;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+/* Estilos responsivos */
+@media (max-width: 1024px) {
+    .modal-content {
+        width: 80%;
+    }
+}
+
+@media (max-width: 768px) {
+    .modal-content {
+        width: 80%;
+    }
+}
+
+@media (max-width: 600px) {
+    .main-section, .innovation-section, .deu-ruim-section {
+        flex-direction: column;
+        align-items: center; /* Centraliza os cards em telas pequenas */
+    }
+
+    .card h2 {
+        font-size: 16px;
+    }
+
+    .card img {
+        height: auto;
+        margin-bottom: 10px;
+    }
+
+    .section-title {
+        font-size: 24px;
+    }
+
+    header h1 {
+        font-size: 28px;
+    }
+
+    .modal-content {
+        width: 95%;
+        height: 90%;
+        padding: 15px;
+    }
+
+    .modal-content h2 {
+        font-size: 20px;
+    }
+
+    .modal-content p {
+        font-size: 16px;
+        text-align: left;
+    }
+}
+
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Boletim Tecnológico</h1>
+</header>
+
+<div class="edition-info">
+    <p>Edição de 09/11/2024</p>
+</div>
+
+<!-- Estrutura de seções -->
+<h2 class="section-title">Inteligência Artificial</h2>
+<div class="main-section">
+    <div class="card" id="card1">
+        <img src="https://tm.ibxk.com.br/2024/10/23/23164926914321.jpg?ims=1280x480" >
+        <h2>Inteligências artificiais estão próximas de ganhar consciência?</h2>
+    </div>
+    <div class="card" id="card2">
+        <img src="https://fly.metroimg.com/upload/q_85,w_700/https://uploads.metroimg.com/wp-content/uploads/2023/07/13112836/Mulher-ressonancia-cerebro-inteligencia-artificial.jpg" >
+        <h2>Imagens geradas por Inteligência Artificial ameaçam a ciência</h2>
+    </div>
+    
+</div>
+<br>
+<h2 class="section-title">Inovação Tecnológica</h2>
+<div class="innovation-section">
+    <div class="card" id="card3">
+        <img src="https://www.gov.br/mcom/pt-br/noticias/2024/janeiro/projeto-para-implantacao-da-tv-3-0-no-brasil-avanca-em-2023/tv-3-0.jpeg" >
+        <h2>DTV+: A Nova Geração da TV Digital</h2>
+    </div>
+
+    <div class="card" id="card4">
+        <img src="https://img.odcdn.com.br/wp-content/uploads/2024/11/shutterstock_2466092397-1024x614.jpg" >
+        <h2>Neuralink: Elon Musk sugere chips cerebrais para alívio de dores</h2>
+    </div>
+
+    <div class="card" id="card5">
+        <img src="https://img.odcdn.com.br/wp-content/uploads/2024/09/shutterstock_2323423867-1024x683.jpg" >
+        <h2>No futuro, o calor do seu corpo talvez carregue seus aparelhos eletrônicos</h2>
+    </div>
+
+    <div class="card" id="card6">
+        <img src="https://img.odcdn.com.br/wp-content/uploads/2024/07/drex_2-2048x1365.jpg" >
+        <h2>Drex: como a moeda digital pode mudar o dia a dia dos brasileiros?</h2>
+    </div>
+</div>
+<br>
+<h2 class="section-title">Deu Ruim?</h2>
+<div class="innovation-section">
+    <div class="card" id="card7">
+        <img src="https://img.odcdn.com.br/wp-content/uploads/2024/11/Oculos-de-Realidade-Virtual-via-Cottonbro-Pexels-2048x1124.jpg" >
+        <h2>Finalmente: Metaverso deu errado ou não?</h2>
+    </div>
+
+    <div class="card" id="card8">
+        <img src="https://tm.ibxk.com.br/2024/11/05/05144545365231.jpg?ims=704x" >
+        <h2>O físico Stephen Hawking realmente ‘previu’ o fim do mundo?</h2>
+    </div>
+</div>
+<br>
+<h2 class="section-title">TRÂNSITO NA CHINA, FIM DO WINDOWS 10 E INOVAÇÃO NO PRIME VÍDEO</h2>
+<div class="innovation-section">
+    <div class="card" id="card9">
+        <img src="https://www.planetcarsz.com/assets/uploads/images/NEWS/transito-na-china.jpg" >
+        <h2>Curiosidades sobre o trânsito na China</h2>
+    </div>
+
+    <div class="card" id="card10">
+        <img src="https://t.ctcdn.com.br/9I_N7Idiog4LPRADvEm2zYjV7zY=/1024x576/smart/i675074.jpeg" >
+        <h2>Suporte ao Windows 10 chega ao fim em breve</h2>
+    </div>
+
+    <div class="card" id="card11">
+        <img src="https://img.odcdn.com.br/wp-content/uploads/2024/11/prime-video1-1920x1080.jpg" >
+        <h2>Prime Video terá resumos de episódios de séries gerados por IA</h2>
+    </div>
+</div>
+
+<!-- Modais -->
+<div id="modal1" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Tecnologia em Destaque: Inteligência Artificial e Consciência</h2>
+        <img src="https://tm.ibxk.com.br/2024/10/23/23164926914321.jpg?ims=1280x480">
+        <p>
+            A ideia de máquinas autônomas ganhando consciência é um tema recorrente em Hollywood, explorado em filmes como Ex Machina, Eu, Robô, e Her. No entanto, no mundo real, o debate sobre IAs desenvolvendo autoconsciência vem ganhando espaço entre pesquisadores e especialistas.
+        </p>
+        <p>
+            Um caso que exemplifica essa questão ocorreu em 2022, quando o engenheiro do Google, Blake Lemoine, afirmou que a IA LaMDA da empresa mostrava sinais de autoconsciência após responder como uma "pessoa". Apesar disso, o Google negou, explicando que a LaMDA simplesmente replica padrões de conversação humana.
+        </p>
+        <p>
+            <strong>O Que é Consciência?</strong><br>
+            Consciência é definida como a capacidade de experimentar e compreender o próprio mundo interior, um fenômeno complexo e até hoje pouco compreendido. Na ciência, o conceito desafia neurocientistas, filósofos e psicólogos por sua natureza abstrata, dificultando a criação de métodos objetivos de pesquisa.
+        </p>
+        <p>
+            <strong>IA: Simulação ou Consciência Real?</strong><br>
+            Há uma divisão entre os especialistas sobre se a consciência requer uma base biológica. Para alguns filósofos, como Ned Block, a consciência está enraizada em substratos biológicos, o que, em tese, impede uma máquina de se tornar verdadeiramente consciente. Outros, como o filósofo David Chalmers, argumentam que o material da mente — biológico ou digital — não importa, acreditando ser possível criar uma IA consciente dentro de uma década.
+        </p>
+        <p>
+            <strong>Ilusão de Consciência</strong><br>
+            A professora Eliane Santiago, da UNIP, destaca que as IAs, ainda que pareçam conscientes, são limitadas a algoritmos que processam dados e simulam respostas baseadas em padrões. Embora essas simulações possam enganar o usuário, a IA ainda carece de uma verdadeira autoconsciência e emoções genuínas.
+        </p>
+        <p>
+            <strong>Um Futuro Incerto</strong><br>
+            Se a criação de uma IA consciente for possível, as implicações éticas são imensas. O filósofo Thomas Metzinger adverte que essa possibilidade pode trazer sofrimento para uma "nova espécie" consciente, sugerindo que as pesquisas avancem com cautela.
+        </p>
+        <p>
+            Por enquanto, a maioria dos especialistas concorda que as IAs ainda estão longe de desenvolver verdadeira consciência. Enquanto alguns imaginam que robôs com sentimentos estão a caminho, outros mantêm o ceticismo, defendendo que o avanço atual ainda não representa uma inteligência "viva".
+        </p>
+    </div>
+</div>
+
+
+<div id="modal2" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>IA Generativa: Uma Ameaça à Integridade Científica?</h2>
+        <img src="https://fly.metroimg.com/upload/q_85,w_700/https://uploads.metroimg.com/wp-content/uploads/2023/07/13112836/Mulher-ressonancia-cerebro-inteligencia-artificial.jpg" alt="Imagem representativa da matéria">
+        <p>
+            O avanço da Inteligência Artificial (IA) generativa está trazendo novos desafios para a ciência, criando preocupações sobre a crescente facilidade de produzir falsificações de dados, imagens e até artigos inteiros, praticamente indistinguíveis dos reais. Essa tecnologia já representa uma dificuldade para cientistas forenses, conhecidos como "detetives científicos", que atuam para manter a integridade da literatura acadêmica.
+        </p>
+        <p>
+            A IA generativa permite que fraudadores criem imagens e dados falsos com precisão, dificultando o trabalho de detecção. Jana Christopher, especialista da FEBS Press, observa um aumento na preocupação sobre o uso dessa tecnologia para falsificações sofisticadas, enquanto Elisabeth Bik, perita em integridade de imagem, alerta que a criação de dados e imagens artificiais pode comprometer a credibilidade de revistas científicas.
+        </p>
+        <p>
+            <strong>O Impacto das Imagens Falsas Geradas por IA</strong><br>
+            Com imagens sintéticas de altíssima qualidade, pesquisadores já encontram dificuldades para distinguir, a olho nu, quais ilustrações em artigos científicos são autênticas. Casos de publicações acidentais de imagens manipuladas, como o famoso episódio de um "rato artificial", reforçam o potencial de confusão e engano. Padrões repetitivos, anteriormente indícios de fraudes, agora são mais difíceis de identificar, tornando a triagem ainda mais dependente de tecnologias de detecção.
+        </p>
+        <p>
+            <strong>Ferramentas para Combater Fraudes</strong><br>
+            Empresas como Imagetwin e Proofig estão aprimorando algoritmos para identificar irregularidades em imagens científicas. Ferramentas como as da Proofig já atingem 98% de precisão, e editoras como Springer Nature e Science também adotam soluções de detecção próprias, mas ainda é necessária a verificação humana para garantir a precisão. Além disso, marcas d'água invisíveis e outros métodos de autenticação digital são estudados como possíveis soluções de segurança.
+        </p>
+        <p>
+            <strong>Iniciativas Contra “Fábricas de Artigos”</strong><br>
+            Organizações como a Associação Internacional de Editores Científicos, Técnicos e Médicos (STM) trabalham para combater as “fábricas de artigos” que produzem pesquisas falsas em larga escala. Projetos como o STM Integrity Hub visam estabelecer novas diretrizes para conter essa prática, mas alguns especialistas alertam que as editoras podem não estar agindo rápido o suficiente para proteger o rigor científico.
+        </p>
+        <p>
+            <strong>O Papel da IA na Detecção de Fraudes</strong><br>
+            Embora a IA represente uma nova ferramenta para fraudes, ela também surge como uma aliada para combatê-las. Especialistas, como o analista Kevin Patrick, estão otimistas de que as tecnologias continuarão a evoluir, permitindo que fraudes que hoje passam despercebidas possam ser identificadas no futuro. A combinação entre inovação tecnológica, políticas editoriais rígidas e revisão humana será essencial para preservar a confiabilidade da ciência.
+        </p>
+        <p>
+            Enquanto a IA promete revolucionar o conhecimento, sua dupla face exige um cuidado redobrado para garantir que o progresso científico continue baseado em dados e pesquisas autênticos.
+        </p>
+    </div>
+</div>
+
+
+<div id="modal3" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>DTV+: A Nova Geração da TV Digital Chega ao Brasil em 2025</h2>
+        <img src="https://www.gov.br/mcom/pt-br/noticias/2024/janeiro/projeto-para-implantacao-da-tv-3-0-no-brasil-avanca-em-2023/tv-3-0.jpeg" alt="Imagem representativa da matéria">
+        <p>
+            Com previsão de lançamento para 2025, a DTV+ — também conhecida como TV 3.0 — promete transformar a experiência da TV aberta no Brasil, trazendo alta qualidade de imagem e som, recursos interativos e personalização de conteúdo. A tecnologia, que deverá estar disponível no país até a Copa do Mundo de 2026, faz parte dos planos do Ministério das Comunicações e será implementada após a definição final do padrão até dezembro de 2024.
+        </p>
+        <p>
+            <strong>O Que é a DTV+?</strong><br>
+            A DTV+ é a evolução da televisão digital no Brasil, que amplia as capacidades da TV 2.0 (que introduziu cores e conectividade) e permite que a programação aberta seja acessada com qualidade 4K e até 8K. O áudio também ganha melhorias significativas, oferecendo uma experiência sonora mais envolvente e imersiva, similar ao cinema.
+        </p>
+        <p>
+            <strong>Principais Recursos da TV 3.0</strong><br>
+            Imagem e Som de Alta Qualidade: Os espectadores terão acesso a conteúdo em resoluções elevadas, com cores e contrastes mais intensos.
+            Interatividade e Personalização: A nova tecnologia permite que os usuários interajam com a programação, como votar em enquetes e adquirir produtos exibidos ao vivo. Além disso, os anúncios poderão ser segmentados de acordo com o perfil de cada usuário, oferecendo maior relevância.
+            Experiência Integrada sem Internet: Embora a conexão à internet amplie as possibilidades de interatividade, como compras online durante programas, a TV 3.0 funcionará sem necessidade de internet para reproduzir imagens e áudio de alta qualidade.
+        </p>
+        <p>
+            <strong>Adaptação ao Novo Padrão</strong><br>
+            Para utilizar a DTV+, os consumidores precisarão de um conversor específico. No futuro, os televisores serão fabricados com o suporte nativo para a tecnologia. O governo estuda a possibilidade de subsidiar os conversores para famílias de baixa renda, como ocorreu na transição para a TV digital.
+        </p>
+        <p>
+            <strong>Expectativa para o Futuro da TV</strong><br>
+            Com os testes em andamento, incluindo transmissões pela Globo e no Globoplay, a DTV+ promete levar a TV aberta a um novo nível de interação e qualidade, mantendo a gratuidade e oferecendo uma experiência de entretenimento cada vez mais personalizada e acessível.
+        </p>
+    </div>
+</div>
+
+
+<div id="modal4" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Neuralink e o Futuro dos Implantes Cerebrais para Alívio da Dor</h2>
+        <img src="https://img.odcdn.com.br/wp-content/uploads/2024/11/shutterstock_2466092397-1024x614.jpg" alt="Imagem representativa da matéria">
+        <p>
+            Elon Musk anunciou que a Neuralink, empresa focada em interfaces cérebro-computador (BCI), deve priorizar o desenvolvimento de chips cerebrais para tratar dores crônicas nas costas e no pescoço. O empresário afirmou estar "cada vez mais convencido" de que um implante direcionado ao alívio da dor poderia melhorar significativamente o bem-estar e a qualidade do sono dos usuários.
+        </p>
+        <p>
+            <strong>Repercussão e Potencial na Saúde</strong><br>
+            A declaração de Musk teve grande repercussão nas redes sociais, acumulando milhões de visualizações e milhares de comentários. Muitos internautas expressaram entusiasmo pela possibilidade de uma solução para dores crônicas. Além disso, alguns questionaram se a tecnologia também poderia ser aplicada no tratamento de outras condições, como problemas de audição, visão e até a doença de Alzheimer. Musk respondeu que, para Alzheimer em estágio inicial, o chip pode trazer algum benefício, mas enfatizou que há limitações em casos avançados.
+        </p>
+        <p>
+            <strong>Oportunidade e Controvérsias</strong><br>
+            Enquanto muitos veem a iniciativa como uma alternativa inovadora para o tratamento da dor, alguns críticos apontam preocupações éticas e de regulamentação. A possibilidade de um dispositivo cerebral operar sem supervisão rigorosa levanta discussões sobre privacidade e controle. A Neuralink já realizou testes em animais e recebeu autorização para ensaios clínicos em humanos nos EUA, atraindo tanto o interesse quanto o ceticismo do público.
+        </p>
+        <p>
+            O avanço da Neuralink representa um marco em potencial para a área da saúde, abrindo caminho para tratamentos menos dependentes de medicamentos, mas também intensificando o debate sobre a regulamentação de tecnologias cerebrais para garantir segurança e ética em seu uso.
+        </p>
+    </div>
+</div>
+
+
+<div id="modal5" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Energia Gerada pelo Calor Corporal: Futuro das Baterias Sustentáveis?</h2>
+        <img src="https://img.odcdn.com.br/wp-content/uploads/2024/09/shutterstock_2323423867-1024x683.jpg" alt="Imagem representativa da matéria">
+        <p>
+            Pesquisadores estão explorando a possibilidade de carregar dispositivos eletrônicos usando o calor do corpo humano, uma fonte de energia renovável e abundante. Esse conceito é parte de um estudo conduzido por Muhammad Muddasar, doutorando da Universidade de Limerick, que investiga como o calor residual gerado pelo corpo e por processos industriais pode ser convertido em eletricidade sustentável.
+        </p>
+        <p>
+            <strong>Como Funciona a Conversão de Calor em Energia</strong><br>
+            O corpo humano emite uma quantidade constante de calor, resultado do metabolismo, que normalmente se dissipa na atmosfera. O estudo utiliza o efeito termoelétrico, que gera eletricidade a partir da diferença de temperatura, para capturar essa energia. Um dos materiais estudados, a lignina (subproduto da indústria de papel), é tratado com solução salina e transformado em membranas termoelétricas. Essas membranas convertem calor de baixa temperatura em eletricidade, criando uma alternativa sustentável para alimentar dispositivos.
+        </p>
+        <p>
+            <strong>Aplicações e Impacto Sustentável</strong><br>
+            Essa tecnologia visa alimentar dispositivos vestíveis, como relógios e rastreadores de atividade física, utilizando o calor do corpo, o que prolongaria sua duração de bateria ou até eliminaria a necessidade de recarga. A técnica também pode ser aplicada em ambientes industriais, onde o calor residual de motores e maquinários seria aproveitado, reduzindo o desperdício energético.
+        </p>
+        <p>
+            Além disso, o carbono poroso extraído da lignina pode ser integrado a supercapacitores, permitindo o armazenamento eficiente da energia captada. A inovação representa um passo importante para reduzir a dependência de baterias convencionais e diminuir o impacto ambiental, com aplicação em eletrônicos pessoais, veículos elétricos e infraestrutura sustentável.
+        </p>
+        <p>
+            Essa tecnologia pode abrir portas para uma nova geração de dispositivos alimentados pela energia corporal, promovendo um uso mais inteligente e sustentável de recursos energéticos.
+        </p>
+    </div>
+</div>
+
+
+<div id="modal6" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Drex: Como o Real Digital Pode Transformar o Sistema Financeiro Brasileiro</h2>
+        <img src="https://img.odcdn.com.br/wp-content/uploads/2024/07/drex_2-2048x1365.jpg" alt="Imagem representativa da matéria">
+        <p>
+            O Banco Central do Brasil está desenvolvendo o Drex, a moeda digital oficial do país, que deve ser lançada no final de 2025. Em fase avançada de testes, o Drex promete mudanças profundas no cenário financeiro, com foco em transações digitais mais seguras, acessíveis e sem intermediários.
+        </p>
+        <p>
+            <strong>O Que é o Drex?</strong><br>
+            Conhecido também como Real Digital, o Drex é uma moeda digital emitida e garantida pelo Banco Central. Ela funcionará como uma extensão das cédulas físicas, mantendo a mesma cotação e estabilidade frente a outras moedas. As transações com o Drex não terão intermediários, o que facilitará pagamentos e transferências diretas entre pessoas e empresas.
+        </p>
+        <p>
+            <strong>Principais Benefícios do Real Digital</strong><br>
+            Inclusão Financeira: O Drex facilita o acesso financeiro em áreas remotas, permitindo que pessoas sem conta bancária realizem transações de maneira digital e segura.
+            Redução de Custos: Com a eliminação de intermediários, o Drex pode diminuir taxas, como as do Pix, que variam entre 0,99% e 1,45%.
+            Transações em Tempo Real: O Drex garantirá transações instantâneas, eliminando a espera que ainda existe em algumas operações bancárias.
+            Investimentos Simplificados: O Real Digital facilitará o investimento em títulos públicos, como o Tesouro Direto, sem a necessidade de corretoras.
+            Organização e Planejamento Financeiro: Com uma moeda 100% digital, será possível consolidar dados financeiros, permitindo maior controle sobre receitas e despesas.
+        </p>
+        <p>
+            <strong>Desafios e Considerações de Privacidade</strong><br>
+            Apesar dos benefícios, o Drex gera preocupações sobre a privacidade. Especialistas alertam para o potencial de controle governamental detalhado sobre transações, já que o Banco Central terá visibilidade direta das operações financeiras realizadas com a moeda digital.
+        </p>
+        <p>
+            <strong>Funcionamento e Acesso</strong><br>
+            Para usar o Drex, os brasileiros precisarão de uma carteira digital mantida por instituições autorizadas, como bancos ou fintechs. A moeda digital poderá ser convertida em dinheiro físico, mas os bancos não poderão emprestá-la, diferentemente do real físico. As operações terão garantias de segurança cibernética e jurídica, assegurando a privacidade dos usuários.
+        </p>
+        <p>
+            O Drex promete ser um marco na digitalização financeira, oferecendo uma nova alternativa para pagamentos e investimentos no Brasil.
+        </p>
+    </div>
+</div>
+
+
+
+
+<div id="modal1" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Metaverso: Por Que a Promessa de Zuckerberg Ainda Não se Concretizou</h2>
+        <img src="https://img.odcdn.com.br/wp-content/uploads/2024/11/Oculos-de-Realidade-Virtual-via-Cottonbro-Pexels-2048x1124.jpg" alt="Imagem representativa da matéria">
+        <p>
+            O Metaverso, anunciado por Mark Zuckerberg como o futuro da interação digital, enfrenta grandes dificuldades para cumprir suas promessas. Concebido como um espaço imersivo para avatares interagirem em um ambiente virtual, o Metaverso gerou expectativas de revolucionar a forma como nos conectamos. No entanto, anos depois de seu lançamento, a plataforma Horizon Worlds da Meta não alcançou popularidade, levando a empresa a demissões em massa e perdas bilionárias.
+        </p>
+        <p>
+            <strong>O Que Deu Errado?</strong><br>
+            Conceito Abstrato: A própria Meta nunca definiu claramente o que o Metaverso ofereceria de inovador em comparação com plataformas de reuniões virtuais, como Zoom. A proposta de interações sociais e profissionais em realidade virtual foi recebida como algo impreciso e de pouco apelo para o público em geral.
+        </p>
+        <p>
+            Experiência Limitada e Equipamentos Caros: A necessidade de equipamentos específicos, como headsets de realidade virtual, representa uma barreira de entrada. Apesar de uma versão acessível, o público ainda considera o equipamento caro e desconfortável para uso prolongado.
+        </p>
+        <p>
+            Qualidade Gráfica e Falta de Engajamento: O Horizon Worlds, principal produto do Metaverso da Meta, foi criticado por gráficos de baixa qualidade, o que afastou ainda mais usuários. Em vez de um avanço tecnológico, a plataforma foi vista como um retrocesso, frustrando as expectativas.
+        </p>
+        <p>
+            <strong>Desafios e Futuro Incerto</strong><br>
+            Embora a Meta continue investindo no projeto, Zuckerberg redirecionou parte dos recursos para o desenvolvimento de inteligência artificial generativa, sinalizando que o foco da empresa está mudando. Além disso, questões sobre privacidade e regulamentação complicam a implementação do Metaverso, pois a coleta e uso dos dados pessoais dos usuários levantam preocupações legais.
+        </p>
+        <p>
+            <strong>Metaverso: Morte Anunciada ou Reinvenção?</strong><br>
+            O Metaverso ainda não está morto, mas o desinteresse e as limitações enfrentadas indicam que a tecnologia precisa de melhorias substanciais para alcançar um público mais amplo. Com a Meta agora investindo em IA, o futuro do Metaverso permanece incerto, deixando dúvidas sobre se a proposta de Zuckerberg será uma revolução adiada ou uma promessa que nunca se concretizará.
+        </p>
+    </div>
+</div>
+
+
+<div id="modal8" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Stephen Hawking e o "Fim do Mundo": O Que Ele Realmente Disse</h2>
+        <img src="https://tm.ibxk.com.br/2024/11/05/05144545365231.jpg?ims=704x" alt="Imagem representativa da matéria">
+        <p>
+            Nos últimos dias, surgiram rumores de que a NASA teria confirmado uma previsão de Stephen Hawking sobre o fim do mundo, vinculada às mudanças climáticas. No entanto, apesar de Hawking ter alertado sobre o impacto do consumo excessivo de recursos naturais e das mudanças climáticas, a NASA não fez nenhuma confirmação oficial sobre tais previsões.
+        </p>
+        <p>
+            <strong>O Alerta de Hawking: Mudanças Climáticas e Extinção</strong><br>
+            Hawking era conhecido por seu alerta sobre o impacto ambiental e sobre a importância de repensar o consumo dos recursos naturais. Ele temia que a exploração desenfreada pudesse causar transformações graves na Terra, colocando em risco a civilização. Em entrevistas, Hawking chegou a sugerir que a colonização de outros planetas poderia ser uma saída para a preservação da espécie humana, argumentando que desastres naturais, conflitos nucleares, e até a inteligência artificial poderiam ameaçar a sobrevivência humana.
+        </p>
+        <p>
+            <strong>A Confusão com a NASA</strong><br>
+            A especulação recente foi impulsionada pela interpretação equivocada de uma palestra dada por Pete Worden, ex-diretor do Centro de Pesquisa Ames da NASA, que mencionou a importância de refletir sobre o impacto ambiental, mas sem qualquer confirmação de uma previsão de Hawking.
+        </p>
+        <p>
+            <strong>Outros Cientistas e a Questão da Sobrevivência Humana</strong><br>
+            Stephen Hawking não estava sozinho em sua preocupação com o futuro do planeta. Personalidades como Elon Musk, que defende a colonização de Marte, também compartilham de visões semelhantes. Além das mudanças climáticas, Hawking também mencionou possíveis ameaças existenciais, incluindo desastres naturais, inteligência artificial fora de controle e até colisões com asteroides.
+        </p>
+        <p>
+            Embora a "previsão" de Hawking sobre o fim do mundo não seja literal, seu alerta serve como um lembrete da importância de um consumo sustentável e de tecnologias responsáveis para garantir o futuro da humanidade.
+        </p>
+    </div>
+</div>
+
+
+
+<div id="modal9" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>7 Curiosidades Sobre Carros e o Trânsito na China</h2>
+        <img src="https://www.planetcarsz.com/assets/uploads/images/NEWS/transito-na-china.jpg" alt="Imagem representativa da matéria">
+        <p>
+            Uma visita à China revela muitas peculiaridades sobre o trânsito e a cultura automobilística local, que vão muito além das diferenças no idioma ou culinária. Em uma passagem por Shanghai e Wuhu, a equipe do Canaltech observou detalhes curiosos e únicos sobre o trânsito e os veículos chineses. Confira:
+        </p>
+        <p>
+            <strong>1. Placas Coloridas para Identificar o Tipo de Veículo</strong><br>
+            Na China, veículos são identificados por placas com cores diferentes, dependendo do tipo de motor: placas verdes são para veículos eletrificados, como carros elétricos e híbridos, enquanto veículos a combustão têm placas de outra cor. Essa diferenciação ajuda na fiscalização e incentiva o uso de carros sustentáveis.
+        </p>
+        <p>
+            <strong>2. Festival de "Tuc-Tucs"</strong><br>
+            Os "tuc-tucs", triciclos motorizados comuns nas ruas chinesas, são populares entre os moradores, e muitos motoristas parecem ignorar as normas de trânsito, dirigindo pela calçada ou na contramão. Muitos adaptam capotas ou colchas para proteção contra o vento, criando um cenário bastante único e curioso.
+        </p>
+        <p>
+            <strong>3. Vigilância Constante</strong><br>
+            A China é conhecida por seu extenso monitoramento: no trânsito, câmeras capturam fotos dos veículos próximos a semáforos e em transportes públicos, como o trem-bala, onde passageiros precisam se identificar. Esse sistema de vigilância registra em tempo real quem está circulando nas cidades.
+        </p>
+        <p>
+            <strong>4. Caminhões Vermelhos por Sorte</strong><br>
+            Na China, a maioria dos caminhões é vermelha, uma cor que simboliza sorte e prosperidade na cultura chinesa. Observadores notaram que cerca de 90% dos caminhões nas estradas têm essa cor, reforçando a presença de tradições culturais até no trânsito.
+        </p>
+        <p>
+            <strong>5. Placas Iluminadas com LED</strong><br>
+            Em Shanghai, várias placas de sinalização contam com iluminação em LED para ajudar motoristas a localizar vias e pontos de interesse, especialmente durante a noite. Essas placas são vistas como um auxílio visual inovador para a navegação nas movimentadas ruas da cidade.
+        </p>
+        <p>
+            <strong>6. Diversidade de Carros</strong><br>
+            A frota chinesa inclui desde carros clássicos, como Ford Fiesta dos anos 90 e Ecosport, até modelos futuristas da Tesla e marcas locais emergentes. É comum ver veículos antigos lado a lado com os mais modernos, refletindo o mix entre o tradicional e o novo.
+        </p>
+        <p>
+            <strong>7. A Buzina como Parte do Trânsito</strong><br>
+            Na China, o uso da buzina é constante. Motoristas buzinam a todo momento, seja para avisar que o semáforo abriu, para ultrapassar ou simplesmente como alerta. Esse “amor pela buzina” é uma característica curiosa que impressiona os visitantes.
+        </p>
+        <p>
+            Essas peculiaridades tornam o trânsito na China uma experiência singular, rica em tradições e adaptações culturais. E você, já conheceu algum lugar com hábitos de trânsito tão diferentes?
+        </p>
+    </div>
+</div>
+
+
+
+<div id="modal10" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Fim do Suporte ao Windows 10: Como se Preparar para a Transição</h2>
+        <img src="https://t.ctcdn.com.br/9I_N7Idiog4LPRADvEm2zYjV7zY=/1024x576/smart/i675074.jpeg" alt="Imagem representativa da matéria">
+        <p>
+            O suporte ao Windows 10 será encerrado em 14 de outubro de 2025, marcando a transição definitiva para o Windows 11. Até lá, a Microsoft continuará a fornecer atualizações de segurança para o Windows 10, mas após essa data, os usuários deixarão de receber essas proteções essenciais.
+        </p>
+        <p>
+            <strong>Recomendações para Usuários do Windows 10</strong><br>
+            A Microsoft recomenda que os usuários atualizem para o Windows 11 para continuar contando com melhorias de segurança e desempenho. A versão mais recente do sistema é projetada para proteger melhor contra ciberataques, além de incluir recursos como o chip de segurança TPM 2.0 e a nova ferramenta de inteligência artificial, o Copilot. A atualização é gratuita para computadores compatíveis e pode ser realizada diretamente pelo menu “Windows Update” nas configurações.
+        </p>
+        <p>
+            <strong>Alternativas para Prolongar o Suporte</strong><br>
+            Para aqueles que desejam continuar com o Windows 10, há a opção de adquirir o Programa de Atualizações de Segurança Estendidas (ESU), que oferece suporte adicional por US$ 30 anuais. Esta extensão estará disponível no final de 2025 para versões domésticas e empresariais, permitindo um ano extra de atualizações de segurança.
+        </p>
+        <p>
+            <strong>Requisitos Mínimos para o Windows 11</strong><br>
+            Para instalar o Windows 11, o computador precisa atender aos seguintes requisitos:
+            <ul>
+                <li>Processador de 1 GHz com dois ou mais núcleos;</li>
+                <li>4 GB de RAM;</li>
+                <li>64 GB de armazenamento;</li>
+                <li>Tela de 9" com resolução de 720p ou superior;</li>
+                <li>Placa de vídeo com DirectX 12 e driver WDDM 2.0;</li>
+                <li>Módulo TPM 2.0 e firmware UEFI com Inicialização Segura;</li>
+                <li>Conexão à internet.</li>
+            </ul>
+            Usuários podem verificar a compatibilidade do dispositivo usando o aplicativo "Verificação de Integridade do PC" da Microsoft.
+        </p>
+        <p>
+            <strong>Alternativas ao Windows 11 para PCs Não Compatíveis</strong><br>
+            Se o dispositivo não atende aos requisitos do Windows 11, há duas opções:
+            <ul>
+                <li><strong>Instalar uma distribuição Linux:</strong> sistemas como Ubuntu ou Fedora são leves e podem oferecer uma experiência funcional em computadores mais antigos.</li>
+                <li><strong>Considerar um Mac:</strong> uma alternativa para quem busca um novo dispositivo fora do ecossistema Windows.</li>
+            </ul>
+        </p>
+        <p>
+            <strong>O Que Acontece Após o Fim do Suporte ao Windows 10?</strong><br>
+            Após 2025, o Windows 10 continuará funcionando, mas a segurança do sistema se reduzirá ao longo do tempo. Além disso, o sistema não receberá mais atualizações para novos recursos ou correções de bugs. A Microsoft também não lançará novos recursos ou inovações para o Windows 10, que já deixou de receber melhorias significativas.
+        </p>
+        <p>
+            <strong>Considerações Finais</strong><br>
+            Com o fim do suporte se aproximando, é importante que os usuários do Windows 10 considerem atualizar ou adotar alternativas, garantindo uma experiência de uso mais segura e eficiente no futuro.
+        </p>
+    </div>
+</div>
+
+
+<div id="modal11" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Prime Video Lança Resumos de Séries Gerados por IA para Evitar Spoilers</h2>
+        <img src="https://img.odcdn.com.br/wp-content/uploads/2024/11/prime-video1-1920x1080.jpg" alt="Imagem representativa da matéria">
+        <p>
+            A Amazon Prime Video anunciou o X-Ray Recaps, um novo recurso que utiliza inteligência artificial (IA) para criar resumos de episódios e temporadas sem revelar detalhes cruciais da trama. A novidade visa ajudar os espectadores a se atualizarem sobre a história de uma série sem correr o risco de spoilers, problema comum em resumos disponíveis online.
+        </p>
+        <p>
+            <strong>Como Funciona o X-Ray Recaps</strong><br>
+            O X-Ray Recaps expande o recurso X-Ray, que já oferece informações sobre elenco e curiosidades. Agora, os usuários poderão acessar resumos clicando em um ícone de retrocesso, com opções para recapitular o episódio atual, a temporada em andamento ou a temporada anterior, com resumos cuidadosamente criados para não revelarem elementos importantes da história.
+        </p>
+        <p>
+            <strong>Tecnologias Envolvidas e Disponibilidade</strong><br>
+            O recurso utiliza IA combinada com as tecnologias Amazon Bedrock e SageMaker para analisar vídeos, legendas e diálogos, criando resumos que acompanham o momento exato em que o usuário está assistindo. Atualmente, o X-Ray Recaps está em fase beta nos Estados Unidos, disponível para clientes Fire TV e em séries originais da Amazon MGM Studios, como The Boys e A Roda do Tempo. A previsão é que o recurso seja expandido para outros dispositivos ainda em 2024.
+        </p>
+        <p>
+            O X-Ray Recaps segue uma tendência de resumos gerados por IA, como a introduzida recentemente pelo Google TV, e promete aprimorar a experiência de quem busca recapitular episódios sem comprometer a surpresa das histórias.
+        </p>
+    </div>
+</div>
+
+
+<footer>
+    <p>&copy; 2024 Boletim Tecnológico</p>
+</footer>
+
+<!-- Scripts para Modais -->
+<script>
+    const cards = document.querySelectorAll('.card');
+    const modals = document.querySelectorAll('.modal');
+    const closes = document.querySelectorAll('.close');
+
+    cards.forEach((card, index) => {
+        card.addEventListener('click', () => {
+            modals[index].style.display = 'block';
+        });
+    });
+
+    closes.forEach((close, index) => {
+        close.addEventListener('click', () => {
+            modals[index].style.display = 'none';
+        });
+    });
+
+    window.onclick = function(event) {
+        modals.forEach(modal => {
+            if (event.target == modal) {
+                modal.style.display = 'none';
+            }
+        });
+    }
+</script>
+
+</body>
+</html>
